@@ -69,12 +69,5 @@ class MyAbstractUser(AbstractBaseUser, PermissionsMixin):
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
 
-
-
-
 class MyUser(MyAbstractUser):
     pass
-
-
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(MyUser,on_delete=models.CASCADE)

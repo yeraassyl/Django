@@ -10,6 +10,12 @@ class ToDoListManager(models.Manager):
     def for_user(self, user):
         return self.filter(owner=user)
 
+class ToDoManager(models.Manager):
+
+    def for_list(self,todo_list):
+        return self.filter(todo_list = todo_list)
+
+
 
 class ToDoList(models.Model):
     name = models.CharField(max_length=40)

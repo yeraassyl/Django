@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'todo.auth_',
     'todo.main',
+    'todo.shop',
 ]
 
 AUTH_USER_MODEL = 'auth_.MyUser'
