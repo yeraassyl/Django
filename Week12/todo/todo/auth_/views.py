@@ -24,13 +24,6 @@ def login(request):
 
 
 @csrf_exempt
-def logout(request):
-    user = auth.logout(request)
-
-    return JsonResponse({'message': 'logged out'}, status=200)
-
-
-@csrf_exempt
 def register(request):
     body = json.loads(request.body.decode('utf-8'))
     username = body.get('username')
