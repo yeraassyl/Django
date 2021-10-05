@@ -25,7 +25,7 @@ class ToDoListView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
-        return ToDoList.objects.for_user(self.request.user).filter(id=self.kwargs.get('pk'))
+        return ToDoList.objects.for_user(self.request.user).filter(id=self.kwargs.get('pk')).order_by('-id')
 
     def get_serializer_class(self):
         return ToDoListSerializer
